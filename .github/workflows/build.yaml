@@ -48,10 +48,10 @@ jobs:
           labels: ${{ steps.meta.outputs.labels }}
           build-args: |
             PUBLIC_HELLO=world
-            PUBLIC_SUPABASE_ANON_KEY=${{ env.PUBLIC_SUPABASE_ANON_KEY }}
+            PUBLIC_SUPABASE_ANON_KEY=${{ secrets.PUBLIC_SUPABASE_ANON_KEY }}
             SUPABASE_SERVICE_ROLE_KEY=${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
-            PUBLIC_SUPABASE_URL=${{ env.PUBLIC_SUPABASE_URL }}
-            PUBLIC_FRONTEND_URL=${{ env.PUBLIC_FRONTEND_URL }}
+            PUBLIC_SUPABASE_URL=${{ secrets.PUBLIC_SUPABASE_URL }}
+            PUBLIC_FRONTEND_URL=${{ secrets.PUBLIC_FRONTEND_URL }}
 
       - name: Deploy on CapRover
         uses: caprover/deploy-from-github@v1.1.2
