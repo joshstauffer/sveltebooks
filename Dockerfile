@@ -2,6 +2,10 @@ FROM node:20-alpine AS sk-build
 WORKDIR /usr/src/app
 
 ARG TZ=America/Chicago
+ARG PUBLIC_FRONTEND_URL
+ARG PUBLIC_SUPABASE_ANON_KEY
+ARG PUBLIC_SUPABASE_URL
+ARG SUPABASE_SERVICE_ROLE_KEY
 
 COPY . /usr/src/app
 RUN apk --no-cache add curl tzdata
